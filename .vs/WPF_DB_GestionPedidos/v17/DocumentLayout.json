@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|c:\\users\\hp probook\\onedrive\\desktop\\c#\\curso c#\\wpf db\\wpf_db_gestionpedidos\\gestionpedidosdataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:gestionpedidosdataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|c:\\users\\hp probook\\onedrive\\desktop\\c#\\curso c#\\wpf db\\wpf_db_gestionpedidos\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,36 +26,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GestionPedidosDataSet.xsd",
-              "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\GestionPedidosDataSet.xsd",
-              "RelativeDocumentMoniker": "GestionPedidosDataSet.xsd",
-              "ToolTip": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\GestionPedidosDataSet.xsd",
-              "RelativeToolTip": "GestionPedidosDataSet.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2024-08-29T21:14:20.441Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-29T19:24:44.711Z"
+              "WhenOpened": "2024-08-29T19:24:44.711Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAIwBsAAABxAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAowH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-29T19:24:44.63Z",
               "EditorCaption": ""

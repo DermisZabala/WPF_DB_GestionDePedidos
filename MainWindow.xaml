@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_DB_GestionPedidos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800">
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Label Content="Clientes"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center" />
+                <ListBox Name="ListaCliente"
+                         Height="300"
+                         Width="300"
+                         SelectionChanged="ListaCliente_SelectionChanged"></ListBox>
+                
+                    <Label Content="Pedidos realizados"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,40,0,0" />
+                    
+                
+                <ListBox x:Name="ListaPedidos"
+                         Height="300"
+                         Width="300" />
+                <Label Content="Todos los Pedidos"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,40,0,0" />
+                <Grid Width="300" HorizontalAlignment="Center"
+                      Margin="0,0,100,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Cantidad de pedidos: "
+                               FontStretch="Medium"
+                               Foreground="Gray"/>
+                        <Label Name="Cantidad"
+                               Content="0"
+                               FontStretch="Medium"
+                               Foreground="Gray" />
+                    </StackPanel>
+                </Grid>
+                <ListBox Name="PedidoCompletos"
+                         Height="300"
+                         Width="450" />
+                <Button Name="EliminarPedido"
+                        Click="EliminarPedido_Click"
+                        Content="Eliminar Pedido"
+                        Background="LightBlue"
+                        FontWeight="Bold"
+                        Margin="0,40,0,50"
+                        Height="30"
+                        Width="250" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
