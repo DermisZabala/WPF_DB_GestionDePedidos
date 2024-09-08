@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using WPF_DB_GestionPedidos.proyectos;
 
 namespace WPF_DB_GestionPedidos
 {
@@ -92,7 +93,7 @@ namespace WPF_DB_GestionPedidos
 
         private void PedidosCompletos()
         {
-            string consulta = "SELECT CONCAT(Id, ' ', IdCliente, ' ', fechaPedido) AS INFOPEDIDO FROM pedido";
+            string consulta = "SELECT *, CONCAT(Id, ' ', IdCliente, ' ', fechaPedido) AS INFOPEDIDO FROM pedido";
 
             SqlDataAdapter miAdactadorSql = new SqlDataAdapter(consulta, miConexionSQL);
 
@@ -101,17 +102,7 @@ namespace WPF_DB_GestionPedidos
                         
             miAdactadorSql.Fill(TablaPedidoCompleta);
 
-            // Contar los pedidos
-            //contador.TryParse(Cantidad, out contador);
-
             Cantidad.Content = TablaPedidoCompleta.Rows.Count;
-
-            
-
-            // Añadir una fila personalizada al final con el mensaje
-            //DataRow newRow = TablaPedidoCompleta.NewRow();
-            //newRow["INFOPEDIDO"] = $"Se han realizado {contador} pedidos";
-            //TablaPedidoCompleta.Rows.Add(newRow);
 
             PedidoCompletos.DisplayMemberPath = $"INFOPEDIDO";            
 
@@ -123,7 +114,42 @@ namespace WPF_DB_GestionPedidos
 
         private void EliminarPedido_Click(object sender, RoutedEventArgs e)
         {
+            miConexionSQL.Open();
+            try
+            {
+                string consultaEliminar = "DELETE FROM pedido WHERE Id=@IDPEDIDO";
 
+                SqlCommand sqlComando = new SqlCommand(consultaEliminar, miConexionSQL);
+
+                sqlComando.Parameters.AddWithValue("@IDPEDIDO", PedidoCompletos.SelectedValue);
+
+                sqlComando.ExecuteNonQuery();
+
+                PedidosCompletos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"VUELVA A INTENTARLO \nHubo un error seleccione un pedido para eliminarlo");
+            }
+            finally
+            {
+                miConexionSQL.Close();
+            }
+        }
+
+        public void IrFormularioCliente_Click(object sender, RoutedEventArgs e)
+        {
+            // Crear una nueva instancia de NavigationWindow
+            NavigationWindow navigationWindow = new NavigationWindow();
+
+            // Navegar a la página
+            navigationWindow.Source = new Uri("proyectos/FormCliente.xaml", UriKind.Relative);
+
+            // Mostrar el NavigationWindow
+            navigationWindow.Show();
+
+            // Cerrar la ventana actual si lo deseas
+            this.Close();
         }
     }
 }

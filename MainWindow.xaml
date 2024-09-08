@@ -9,8 +9,26 @@
         Height="450"
         Width="800">
     <Grid>
+        
+        
         <ScrollViewer VerticalScrollBarVisibility="Auto">
+            
             <StackPanel>
+                <Grid>
+                    <Button Name="IrFormularioCliente"
+                            Click="IrFormularioCliente_Click"
+                            Content="Ir a formulario Clientes"
+                            Height="30"
+                            Width="205"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            FontSize="17"
+                            FontWeight="ExtraBold"
+                            FontStyle="Normal"
+                            BorderBrush="White"
+                            Background="White"
+                            Margin="40,0,0,0" />
+                </Grid>
                 <Label Content="Clientes"
                        FontSize="30"
                        FontWeight="Bold"

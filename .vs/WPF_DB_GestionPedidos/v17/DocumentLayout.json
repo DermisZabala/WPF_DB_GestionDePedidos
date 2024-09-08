@@ -3,12 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|c:\\users\\hp probook\\onedrive\\desktop\\c#\\curso c#\\wpf db\\wpf_db_gestionpedidos\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|c:\\users\\hp probook\\onedrive\\desktop\\c#\\curso c#\\wpf db\\wpf_db_gestionpedidos\\proyectos\\formcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:proyectos\\formcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|c:\\users\\hp probook\\onedrive\\desktop\\c#\\curso c#\\wpf db\\wpf_db_gestionpedidos\\proyectos\\formcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:proyectos\\formcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/hamel_SQLEXPRESS/GestionPedidos/True/SqlTable/dbo.Cliente.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|c:\\users\\hp probook\\onedrive\\desktop\\c#\\curso c#\\wpf db\\wpf_db_gestionpedidos\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C4844FA-A1A5-447D-A72F-88DD503FB1A1}|WPF_DB_GestionPedidos.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +37,42 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.Cliente [Datos]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/hamel_SQLEXPRESS/GestionPedidos/True/SqlTable/dbo.Cliente.sql",
+              "ToolTip": "dbo.Cliente [Datos]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-08T02:30:50.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FormCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\proyectos\\FormCliente.xaml",
+              "RelativeDocumentMoniker": "proyectos\\FormCliente.xaml",
+              "ToolTip": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\proyectos\\FormCliente.xaml",
+              "RelativeToolTip": "proyectos\\FormCliente.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-08T00:48:04.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "proyectos\\FormCliente.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\proyectos\\FormCliente.xaml.cs",
+              "RelativeDocumentMoniker": "proyectos\\FormCliente.xaml.cs",
+              "ToolTip": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\proyectos\\FormCliente.xaml.cs",
+              "RelativeToolTip": "proyectos\\FormCliente.xaml.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAuwDgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T01:13:47.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -38,13 +84,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\HP PROBOOK\\OneDrive\\Desktop\\c#\\curso c#\\WPF DB\\WPF_DB_GestionPedidos\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAowH0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAuwCAAAACkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-29T19:24:44.63Z",
               "EditorCaption": ""
