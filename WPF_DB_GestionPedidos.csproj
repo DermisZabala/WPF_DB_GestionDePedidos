@@ -56,9 +56,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="actualizar\actualizarArticulo.xaml.cs">
+      <DependentUpon>actualizarArticulo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="actualizar\actualizarCliente.xaml.cs">
+      <DependentUpon>actualizarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="proyectos\FormArticulo.xaml.cs">
+      <DependentUpon>FormArticulo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="proyectos\FormCliente.xaml.cs">
       <DependentUpon>FormCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="proyectos\formPedido.xaml.cs">
+      <DependentUpon>formPedido.xaml</DependentUpon>
+    </Compile>
+    <Page Include="actualizar\actualizarArticulo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="actualizar\actualizarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,7 +96,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="proyectos\FormArticulo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="proyectos\FormCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="proyectos\formPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

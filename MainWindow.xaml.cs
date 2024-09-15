@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 using WPF_DB_GestionPedidos.proyectos;
+using WPF_DB_GestionPedidos.actualizar;
 
 namespace WPF_DB_GestionPedidos
 {
@@ -36,80 +37,106 @@ namespace WPF_DB_GestionPedidos
 
             MuestraClientes();
 
+            MuestraArticulos();
+
             PedidosCompletos();
+
         }
 
         private void MuestraClientes()
         {
             miConexionSQL.Open();
-            
-            string consulta = "SELECT * FROM Cliente";
+            try
+            {
+                string consulta = "SELECT * FROM Cliente";
 
-            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, miConexionSQL);
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, miConexionSQL);
 
-            DataTable tablaCliente = new DataTable();
+                DataTable tablaCliente = new DataTable();
 
-            adaptador.Fill(tablaCliente);
-                        
-            ListaCliente.DisplayMemberPath = "nombre";
+                adaptador.Fill(tablaCliente);
 
-            ListaCliente.SelectedValuePath = "Id";
-            
-            ListaCliente.ItemsSource = tablaCliente.DefaultView;
-            
-            miConexionSQL.Close();
+                ListaCliente.DisplayMemberPath = "nombre";
+
+                ListaCliente.SelectedValuePath = "Id";
+
+                ListaCliente.ItemsSource = tablaCliente.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                miConexionSQL.Close();
+            }
         }
 
         private void ListaCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            MuestraPedidos();
+            if (ListaCliente.SelectedValue != null)
+            {
+                MuestraPedidos();
+            }
             
         }
 
         private void MuestraPedidos()
         {
-            string consultaPEDIDO = "SELECT * FROM Pedido objP INNER JOIN Cliente objC ON " +
-                "objC.Id = objP.IdCliente WHERE objC.Id = @ClienteId";
+            try
+            {
+                string consultaPEDIDO = "SELECT * FROM Pedido objP INNER JOIN Cliente objC ON " +
+                    "objC.Id = objP.IdCliente WHERE objC.Id = @ClienteId";
 
-            SqlCommand sqlComando = new SqlCommand(consultaPEDIDO, miConexionSQL);
+                SqlCommand sqlComando = new SqlCommand(consultaPEDIDO, miConexionSQL);
 
-            SqlDataAdapter miAdactador = new SqlDataAdapter(sqlComando);
+                SqlDataAdapter miAdactador = new SqlDataAdapter(sqlComando);
 
-            DataTable TablaPedido = new DataTable();
+                DataTable TablaPedido = new DataTable();
 
-            // Añadir el parámetro el valor 
-            miAdactador.SelectCommand.Parameters.AddWithValue("@ClienteId", ListaCliente.SelectedValue);
+                // Añadir el parámetro el valor 
+                miAdactador.SelectCommand.Parameters.AddWithValue("@ClienteId", ListaCliente.SelectedValue);
 
-            miAdactador.Fill(TablaPedido);
+                miAdactador.Fill(TablaPedido);
 
-            ListaPedidos.DisplayMemberPath = "Id";
-            
-            ListaPedidos.SelectedValuePath = "IdCliente";
-            
-            ListaPedidos.ItemsSource = TablaPedido.DefaultView;
-            
+                ListaPedidos.DisplayMemberPath = "Id";
+
+                ListaPedidos.SelectedValuePath = "IdCliente";
+
+                ListaPedidos.ItemsSource = TablaPedido.DefaultView;
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show("Error");
+            }
+
         }
 
         private void PedidosCompletos()
         {
-            string consulta = "SELECT *, CONCAT(Id, ' ', IdCliente, ' ', fechaPedido) AS INFOPEDIDO FROM pedido";
+            try
+            {
+                string consulta = "SELECT *, CONCAT(Id, ' \t', IdCliente, ' \t', formaPago, ' \t', montoTotal, '     \t', fechaPedido) AS INFOPEDIDO FROM pedido";
 
-            SqlDataAdapter miAdactadorSql = new SqlDataAdapter(consulta, miConexionSQL);
+                SqlDataAdapter miAdactadorSql = new SqlDataAdapter(consulta, miConexionSQL);
 
-            DataTable TablaPedidoCompleta = new DataTable();
-            
-                        
-            miAdactadorSql.Fill(TablaPedidoCompleta);
+                DataTable TablaPedidoCompleta = new DataTable();
 
-            Cantidad.Content = TablaPedidoCompleta.Rows.Count;
 
-            PedidoCompletos.DisplayMemberPath = $"INFOPEDIDO";            
+                miAdactadorSql.Fill(TablaPedidoCompleta);
 
-            PedidoCompletos.SelectedValuePath = "Id";
+                Cantidad.Content = TablaPedidoCompleta.Rows.Count;
 
-            PedidoCompletos.ItemsSource = TablaPedidoCompleta.DefaultView;
+                PedidoCompletos.DisplayMemberPath = $"INFOPEDIDO";
 
+                PedidoCompletos.SelectedValuePath = "Id";
+
+                PedidoCompletos.ItemsSource = TablaPedidoCompleta.DefaultView;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
 
         private void EliminarPedido_Click(object sender, RoutedEventArgs e)
@@ -150,6 +177,182 @@ namespace WPF_DB_GestionPedidos
 
             // Cerrar la ventana actual si lo deseas
             this.Close();
+        }
+
+        private void EliminarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            string consulta = "DELETE FROM CLIENTE WHERE Id = @ClienteId";
+            
+            SqlCommand SqlComando = new SqlCommand(consulta, miConexionSQL);
+            
+            miConexionSQL.Open();
+
+            SqlComando.Parameters.AddWithValue("@ClienteId", ListaCliente.SelectedValue);           
+
+            SqlComando.ExecuteNonQuery();
+            
+            miConexionSQL.Close();
+            
+            MuestraClientes();
+        }
+
+        private void IrFormularioArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow navegar = new NavigationWindow();
+
+            navegar.Source = new Uri("proyectos/FormArticulo.xaml", UriKind.Relative);
+
+            navegar.Show();
+
+            this.Close();
+        }
+
+        private void actualizarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            actualizarCliente ActualizarCliente = new actualizarCliente((int)ListaCliente.SelectedValue);
+
+            try
+            {
+                string consulta = "SELECT * FROM Cliente WHERE Id = @CLIENTEID";
+
+                SqlCommand miComando = new SqlCommand(consulta, miConexionSQL);
+
+                SqlDataAdapter miAdaptador = new SqlDataAdapter(miComando);
+
+                DataTable tablaCliente = new DataTable();
+
+                miComando.Parameters.AddWithValue("@CLIENTEID", ListaCliente.SelectedValue);
+
+                miAdaptador.Fill(tablaCliente);
+
+                //NombreCliente
+                ActualizarCliente.ActualizarNombreCliente.Text = tablaCliente.Rows[0]["nombre"].ToString();
+
+                ActualizarCliente.DireccionCliente.Text = tablaCliente.Rows[0]["direccion"].ToString();
+
+                ActualizarCliente.PoblacionCliente.Text = tablaCliente.Rows[0]["poblacion"].ToString();
+
+                ActualizarCliente.NumeroDeTelefono.Text = tablaCliente.Rows[0]["telefono"].ToString();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Ha cometido un error debe seleccionar un cliente");
+            }
+
+            ActualizarCliente.Show();
+        }        
+
+        private void MuestraArticulos()
+        {
+            miConexionSQL.Open();
+            try
+            {
+                string consulta = "SELECT *, CONCAT(Seccion, ' \t', nombreArticulo) AS INFOARTICULO FROM Articulo";
+
+                SqlDataAdapter miAdactador = new SqlDataAdapter(consulta, miConexionSQL);
+
+                DataTable tablaArticulo = new DataTable();
+
+                miAdactador.Fill(tablaArticulo);
+
+                ListaArticulos.DisplayMemberPath = "INFOARTICULO";
+
+                ListaArticulos.SelectedValuePath = "Id";
+
+                ListaArticulos.ItemsSource = tablaArticulo.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errorcito papa" + ex.ToString());
+            }
+            finally
+            {
+                miConexionSQL.Close();
+            }
+        }
+
+        private void EliminaArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            miConexionSQL.Open();
+
+            try
+            {
+                string consulta = "DELETE FROM Articulo WHERE Id=@ARTICULOID";
+
+                SqlCommand miComando = new SqlCommand(consulta, miConexionSQL);
+
+                miComando.Parameters.AddWithValue("@ARTICULOID", ListaArticulos.SelectedValue);
+
+                miComando.ExecuteNonQuery();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                miConexionSQL.Close();
+            }
+
+            MuestraArticulos();
+        }
+
+        private void actualizarArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            actualizarArticulo actualizaArticulo = new actualizarArticulo((int)ListaArticulos.SelectedValue);
+
+            actualizaArticulo.Show();
+
+            miConexionSQL.Open();
+
+            try
+            {
+                string consulta = "SELECT * FROM Articulo WHERE Id = @IDARTICULO";
+
+                SqlCommand miComando = new SqlCommand(consulta, miConexionSQL);
+
+                SqlDataAdapter miAdaptador = new SqlDataAdapter(miComando);
+
+                DataTable tablaArticulo = new DataTable();
+
+                miComando.Parameters.AddWithValue("@IDARTICULO", ListaArticulos.SelectedValue);
+
+                miAdaptador.Fill(tablaArticulo);
+
+                actualizaArticulo.ActualizarSeccion.Text = tablaArticulo.Rows[0]["Seccion"].ToString();
+                actualizaArticulo.NombreArticulo.Text = tablaArticulo.Rows[0]["nombreArticulo"].ToString();
+                actualizaArticulo.PrecioArticulo.Text = tablaArticulo.Rows[0]["precio"].ToString();
+                actualizaArticulo.FechaArticulo.Text = tablaArticulo.Rows[0]["fecha"].ToString();
+                actualizaArticulo.PaisOrigen.Text = tablaArticulo.Rows[0]["paisOrigen"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ha ocurrido una excepcion. \nMas info: \n {ex.ToString()}");
+            }
+            finally
+            {
+                miConexionSQL.Close();
+            }
+        }
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            MuestraClientes();
+            MuestraArticulos();
+        }
+
+        private void AgregarPedido_Click(object sender, RoutedEventArgs e)
+        {
+            int idCliente = (int)ListaCliente.SelectedValue;
+
+            formPedido Cliente = new formPedido(idCliente);
+
+            NavigationWindow navegarPedido = new NavigationWindow();
+
+            // Navegar directamente a la instancia de formPedido en lugar de la URI
+            navegarPedido.Navigate(Cliente);
+
+            navegarPedido.Show();
         }
     }
 }

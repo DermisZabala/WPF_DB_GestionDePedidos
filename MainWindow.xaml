@@ -7,27 +7,45 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
-        Width="800">
+        Width="800"
+        Activated="Window_Activated">
     <Grid>
-        
-        
+        <Frame Name="MainFrame"
+               NavigationUIVisibility="Hidden" />
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            
             <StackPanel>
-                <Grid>
+                <Grid Background="Gray" Height="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     <Button Name="IrFormularioCliente"
                             Click="IrFormularioCliente_Click"
-                            Content="Ir a formulario Clientes"
+                            Grid.Column="0"
+                            Content="Formulario Cliente"
                             Height="30"
-                            Width="205"
-                            VerticalAlignment="Top"
-                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
                             FontSize="17"
                             FontWeight="ExtraBold"
                             FontStyle="Normal"
-                            BorderBrush="White"
-                            Background="White"
-                            Margin="40,0,0,0" />
+                            BorderBrush="Gray"
+                            Background="Gray"
+                            />
+                    <Button Name="IrFormularioArticulo"
+                            Click="IrFormularioArticulo_Click"
+                            Grid.Column="1"
+                            Content="Formulario Articulo"
+                            Height="30"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="17"
+                            FontWeight="ExtraBold"
+                            FontStyle="Normal"
+                            BorderBrush="Gray"
+                            Background="Gray"
+                            />
                 </Grid>
                 <Label Content="Clientes"
                        FontSize="30"
@@ -36,18 +54,79 @@
                 <ListBox Name="ListaCliente"
                          Height="300"
                          Width="300"
-                         SelectionChanged="ListaCliente_SelectionChanged"></ListBox>
-                
-                    <Label Content="Pedidos realizados"
+                         SelectionChanged="ListaCliente_SelectionChanged"
+                         >                    
+                </ListBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                            Margin="0,0" >
+                    <Button Name="actualizarCliente"
+                            Click="actualizarCliente_Click"
+                            Content="Actualizar Cliente"
+                            Background="LightBlue"
+                            FontWeight="Bold"
+                            Margin="0,40,10,50"
+                            Height="30"
+                            Width="250" />
+                    <Button Name="EliminaCliente"
+                            Click="EliminarCliente_Click"
+                            Content="Elimina Cliente"
+                            Background="LightBlue"
+                            FontWeight="Bold"
+                            Margin="10,40,0,50"
+                            Height="30"
+                            Width="250" 
+                            />
+                </StackPanel>
+                <TextBlock Foreground="Gray"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,0">
+                    <Run Text="Seleccione un cliente en la tabla de cliente y pulse el botón para añadir un pedido." />
+                                       
+                </TextBlock>
+                <Button Name="AgregarPedido"
+                        Click="AgregarPedido_Click"
+                        Content="Agregar Pedido"
+                        Background="LightBlue"
+                        FontWeight="Bold"
+                        Margin="10,5,0,50"
+                        Height="30"
+                        Width="250" />
+                <Label Content="Pedidos realizados"
                            FontSize="30"
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
-                           Margin="0,40,0,0" />
-                    
-                
-                <ListBox x:Name="ListaPedidos"
+                           Margin="0,40,0,0" />                
+                <ListBox Name="ListaPedidos"
                          Height="300"
                          Width="300" />
+                <Label Content="Articulos"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,40,0,0" />
+                <ListBox Name="ListaArticulos"
+                         Height="300"
+                         Width="300" />
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0">
+                    <Button Name="actualizarArticulo"
+                            Click="actualizarArticulo_Click"
+                            Content="Actualizar Articulo"
+                            Background="LightBlue"
+                            FontWeight="Bold"
+                            Margin="0,40,10,50"
+                            Height="30"
+                            Width="250" />
+                    <Button Name="EliminaArticulo"
+                            Click="EliminaArticulo_Click"
+                            Content="Elimina Articulo"
+                            Background="LightBlue"
+                            FontWeight="Bold"
+                            Margin="10,40,0,50"
+                            Height="30"
+                            Width="250" />
+                </StackPanel>
                 <Label Content="Todos los Pedidos"
                        FontSize="30"
                        FontWeight="Bold"
@@ -62,12 +141,12 @@
                         <Label Name="Cantidad"
                                Content="0"
                                FontStretch="Medium"
-                               Foreground="Gray" />
+                               Foreground="Gray"/>
                     </StackPanel>
                 </Grid>
                 <ListBox Name="PedidoCompletos"
                          Height="300"
-                         Width="450" />
+                         Width="450"/>
                 <Button Name="EliminarPedido"
                         Click="EliminarPedido_Click"
                         Content="Eliminar Pedido"
@@ -75,7 +154,7 @@
                         FontWeight="Bold"
                         Margin="0,40,0,50"
                         Height="30"
-                        Width="250" />
+                        Width="250"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

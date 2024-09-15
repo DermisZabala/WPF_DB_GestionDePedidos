@@ -127,9 +127,9 @@ namespace WPF_DB_GestionPedidos.proyectos
             //miListBox.ItemsSource = tablaPedido.DefaultView;
 
             miConexionSql.Close();
-        }*/
+        }*/        
 
-        private void IrFormularioCliente_Click(object sender, RoutedEventArgs e)
+        private void IrA_Inicio_Click(object sender, RoutedEventArgs e)
         {
             // Crear una nueva instancia de MainWindow
             MainWindow mainWindow = new MainWindow();
@@ -142,6 +142,9 @@ namespace WPF_DB_GestionPedidos.proyectos
             Window.GetWindow(this)?.Close();
         }
 
-        
+        private void IrFormularioArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("proyectos/FormArticulo.xaml", UriKind.Relative));
+        }
     }
 }

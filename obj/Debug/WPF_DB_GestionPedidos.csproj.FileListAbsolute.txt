@@ -15,3 +15,11 @@ C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\ob
 C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\WPF_DB_GestionPedidos.pdb
 C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\proyectos\FormCliente.g.cs
 C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\proyectos\FormCliente.baml
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\proyectos\FormArticulo.g.cs
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\proyectos\FormArticulo.baml
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\actualizar\actualizarCliente.g.cs
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\actualizar\actualizarCliente.baml
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\actualizar\actualizarArticulo.g.cs
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\actualizar\actualizarArticulo.baml
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\proyectos\formPedido.g.cs
+C:\Users\HP PROBOOK\OneDrive\Desktop\c#\curso c#\WPF DB\WPF_DB_GestionPedidos\obj\Debug\proyectos\formPedido.baml
